@@ -1,0 +1,21 @@
+.listContainer {
+  width: 80rem;
+  height: 11rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15rem;
+  border: 1px solid #888;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.actionBtn button {
+  background-color: #fff;
+  border: none;
+}
