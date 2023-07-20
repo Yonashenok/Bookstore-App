@@ -59,7 +59,7 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Math Magicians] <a name="about-project"></a>
+# 📖 [Bookstore] <a name="about-project"></a>
 
 **[Bookstore]** is a website
 
