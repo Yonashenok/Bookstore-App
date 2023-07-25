@@ -4,7 +4,9 @@ import { useDispatch } from 'react-redux';
 import { deleteBook, removeBook } from '../../redux/books/booksSlice';
 import classes from './Book.module.css';
 
-const Book = ({ category, title, author, itemId }) => {
+const Book = ({
+  category, title, author, itemId,
+}) => {
   const dispatch = useDispatch();
   const handleRemoveBook = (id) => {
     dispatch(removeBook(id));
@@ -14,14 +16,20 @@ const Book = ({ category, title, author, itemId }) => {
   return (
     <li className={classes.listContainer}>
       <div>
-        <div>
-          <p>{category}</p>
-          <h2>{title}</h2>
-          <p>{author}</p>
+        <div className={classes.authorDetails}>
+          <p className={classes.category}>{category}</p>
+          <h2 className={classes.title}>{title}</h2>
+          <p className={classes.author}>{author}</p>
         </div>
         <div className={classes.actionBtn}>
-          <button type="button">Comments</button>
-          <button onClick={() => handleRemoveBook(itemId)} type="button">
+          <button className={classes.commentsBtn} type="button">
+            Comments
+          </button>
+          <button
+            className={classes.removeBtn}
+            onClick={() => handleRemoveBook(itemId)}
+            type="button"
+          >
             Remove
           </button>
           <button className={classes.editBtn} type="button">
