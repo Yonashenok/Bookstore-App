@@ -26,7 +26,7 @@ const BookInput = () => {
 
   return (
     <form className={classes.form} onSubmit={handleAddBook}>
-      <h2>ADD NEW BOOK</h2>
+      <h2 className={classes.title}>ADD NEW BOOK</h2>
       <div className={classes.inputs}>
         <input
           className={classes.bookInput}
@@ -46,7 +46,9 @@ const BookInput = () => {
           value={authorName}
           onChange={(e) => setAuthorName(e.target.value)}
         />
-        <button type="submit">ADD BOOK</button>
+        <button className={classes.addBook} type="submit">
+          ADD BOOK
+        </button>
       </div>
     </form>
   );

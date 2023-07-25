@@ -1,10 +1,9 @@
 import React from 'react';
 import classes from './CategoriesPage.module.css';
-import BookList from '../components/BookLists/BookList';
 
 const CategoriesPage = () => (
   <div className={classes.CategoriesPageContainer}>
-    <BookList />
+    <h1>Categories</h1>
   </div>
 );
 

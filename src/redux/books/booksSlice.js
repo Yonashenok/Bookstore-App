@@ -3,14 +3,7 @@ import axios from 'axios';
 import { API_URL } from '../../helper/config';
 
 const initialState = {
-  books: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-  ],
+  books: [],
   status: 'idle',
   error: 'no',
 };
@@ -60,7 +53,7 @@ const booksSlice = createSlice({
         state.status = 'Loading books...';
       })
       .addCase(fetchBooks.fulfilled, (state, action) => {
-        state.books.push(...action.payload);
+        state.books = action.payload || [];
         state.status = 'Books loaded';
       })
       .addCase(fetchBooks.rejected, (state, action) => {

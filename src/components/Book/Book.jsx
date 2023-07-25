@@ -14,27 +14,42 @@ const Book = ({ book }) => {
   return (
     <li className={classes.listContainer}>
       <div>
-        <div>
-          <p>{book.category}</p>
-          <h2>{book.title}</h2>
-          <p>{book.author}</p>
+        <div className={classes.authorDetails}>
+          <p className={classes.category}>{book.category}</p>
+          <h2 className={classes.title}>{book.title}</h2>
+          <p className={classes.author}>{book.author}</p>
         </div>
         <div className={classes.actionBtn}>
-          <button type="button">Comments</button>
-          <button onClick={() => handleRemoveBook(book.item_id)} type="button">
+          <button className={classes.commentsBtn} type="button">
+            Comments
+          </button>
+          <button
+            className={classes.removeBtn}
+            onClick={() => handleRemoveBook(book.item_id)}
+            type="button"
+          >
             Remove
           </button>
-          <button type="button">Edit</button>
+          <button className={classes.editBtn} type="button">
+            Edit
+          </button>
+        </div>
+      </div>
+      <div className={classes.completed}>
+        <button role="tab" type="button" className={classes.Oval}>
+          .
+        </button>
+        <div>
+          <p className={classes.Percent_Complete}>64%</p>
+          <p className={classes.completedText}>Completed</p>
         </div>
       </div>
       <div>
-        <p>64%</p>
-        <p>Completed</p>
-      </div>
-      <div>
-        <p>Current Chapter</p>
-        <p>Chapter 17</p>
-        <button type="button">UPDATE PROGRESS</button>
+        <p className={classes.current_Chapter}>Current Chapter</p>
+        <p className={classes.current_Lesson}>Chapter 17</p>
+        <button className={classes.update_progress} type="button">
+          UPDATE PROGRESS
+        </button>
       </div>
     </li>
   );
