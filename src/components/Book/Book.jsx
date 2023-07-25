@@ -1,10 +1,10 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteBook, removeBook } from '../../redux/books/booksSlice';
 import classes from './Book.module.css';
-/* eslint-disable react/prop-types */
 
-const Book = ({ book }) => {
+const Book = ({ category, title, author, itemId }) => {
   const dispatch = useDispatch();
   const handleRemoveBook = (id) => {
     dispatch(removeBook(id));
@@ -14,20 +14,14 @@ const Book = ({ book }) => {
   return (
     <li className={classes.listContainer}>
       <div>
-        <div className={classes.authorDetails}>
-          <p className={classes.category}>{book.category}</p>
-          <h2 className={classes.title}>{book.title}</h2>
-          <p className={classes.author}>{book.author}</p>
+        <div>
+          <p>{category}</p>
+          <h2>{title}</h2>
+          <p>{author}</p>
         </div>
         <div className={classes.actionBtn}>
-          <button className={classes.commentsBtn} type="button">
-            Comments
-          </button>
-          <button
-            className={classes.removeBtn}
-            onClick={() => handleRemoveBook(book.item_id)}
-            type="button"
-          >
+          <button type="button">Comments</button>
+          <button onClick={() => handleRemoveBook(itemId)} type="button">
             Remove
           </button>
           <button className={classes.editBtn} type="button">
@@ -55,4 +49,17 @@ const Book = ({ book }) => {
   );
 };
 
+Book.defaultProps = {
+  category: 'Nonfiction',
+  title: '',
+  author: '',
+  itemId: 'item1',
+};
+
+Book.propTypes = {
+  category: propTypes.string,
+  title: propTypes.string,
+  author: propTypes.string,
+  itemId: propTypes.string,
+};
 export default Book;

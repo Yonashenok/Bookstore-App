@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import axios from 'axios';
 import classes from './BookList.module.css';
 import Book from '../Book/Book';
 import { fetchBooks } from '../../redux/books/booksSlice';
@@ -14,7 +13,13 @@ const BookList = () => {
   return (
     <ul className={classes.bookListContainer}>
       {books.map((book) => (
-        <Book key={book.item_id} book={book} />
+        <Book
+          key={book.item_id}
+          itemId={book.item_id}
+          category={book.category}
+          title={book.title}
+          author={book.author}
+        />
       ))}
     </ul>
   );
