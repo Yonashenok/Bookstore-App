@@ -3,14 +3,7 @@ import axios from 'axios';
 import { API_URL } from '../../helper/config';
 
 const initialState = {
-  books: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-  ],
+  books: [],
   status: 'idle',
   error: 'no',
 };
