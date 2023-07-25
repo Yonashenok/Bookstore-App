@@ -53,7 +53,7 @@ const booksSlice = createSlice({
         state.status = 'Loading books...';
       })
       .addCase(fetchBooks.fulfilled, (state, action) => {
-        state.books.push(...action.payload);
+        state.books = action.payload || [];
         state.status = 'Books loaded';
       })
       .addCase(fetchBooks.rejected, (state, action) => {
