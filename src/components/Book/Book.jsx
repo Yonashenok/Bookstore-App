@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../../redux/books/booksSlice';
+import { deleteBook, removeBook } from '../../redux/books/booksSlice';
 import classes from './Book.module.css';
 /* eslint-disable react/prop-types */
 
@@ -8,6 +8,7 @@ const Book = ({ book }) => {
   const dispatch = useDispatch();
   const handleRemoveBook = (id) => {
     dispatch(removeBook(id));
+    dispatch(deleteBook(id));
   };
 
   return (
