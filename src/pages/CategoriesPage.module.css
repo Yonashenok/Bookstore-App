@@ -2,7 +2,7 @@
   width: 110rem;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   box-shadow:
     rgba(50, 50, 93, 0.25) 0 50px 100px -20px,

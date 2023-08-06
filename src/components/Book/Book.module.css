@@ -46,7 +46,7 @@
   text-align: left;
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start;
   color: #4386bf;
   background-color: #fff;
 }
@@ -55,7 +55,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   gap: 0;
 }
 
