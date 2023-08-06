@@ -61,13 +61,14 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 [Bookstore] <a name="about-project"></a>
 
-**[Bookstore]** is a website
+**[Bookstore]** is a app for organizing personal book list. Add, Remove & track reading progress, bookmark are some key features in this application.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 - React.jsx
+- CSS module
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
