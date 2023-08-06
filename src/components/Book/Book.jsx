@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import { deleteBook, removeBook } from '../../redux/books/booksSlice';
 import classes from './Book.module.css';
 
@@ -8,9 +10,16 @@ const Book = ({
   category, title, author, itemId,
 }) => {
   const dispatch = useDispatch();
+  const [progress, setProgress] = useState(12.5);
   const handleRemoveBook = (id) => {
     dispatch(removeBook(id));
     dispatch(deleteBook(id));
+  };
+
+  const handleProgress = (e) => {
+    const chapter = e.target.value.split(' ');
+    const prog = (+chapter[1] / 8) * 100;
+    setProgress(prog);
   };
 
   return (
@@ -32,26 +41,36 @@ const Book = ({
           >
             Remove
           </button>
-          <button className={classes.editBtn} type="button">
-            Edit
-          </button>
         </div>
       </div>
       <div className={classes.completed}>
-        <button role="tab" type="button" className={classes.Oval}>
-          .
-        </button>
+        <CircularProgressbar value={progress} className={classes.progress} />
         <div>
-          <p className={classes.Percent_Complete}>64%</p>
+          <p className={classes.Percent_Complete}>{`${progress}%`}</p>
           <p className={classes.completedText}>Completed</p>
         </div>
       </div>
       <div>
+        <h2 className={classes.current_Chapter}>UPDATE PROGRESS</h2>
         <p className={classes.current_Chapter}>Current Chapter</p>
-        <p className={classes.current_Lesson}>Chapter 17</p>
-        <button className={classes.update_progress} type="button">
-          UPDATE PROGRESS
-        </button>
+        <form>
+          <select
+            className={classes.update_progress}
+            name="country"
+            id="country"
+            onChange={handleProgress}
+          >
+            {Array.from({ length: 8 }, (_, i) => (
+              <option
+                className={classes.chapter}
+                key={`result-${i}`}
+                value={`Chapter ${i + 1}`}
+              >
+                {`Chapter ${i + 1}`}
+              </option>
+            ))}
+          </select>
+        </form>
       </div>
     </li>
   );
