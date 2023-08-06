@@ -18,7 +18,7 @@
 }
 
 .bookInput {
-  width: 19.5rem;
+  width: 10.5rem;
   height: 2.813rem;
   padding: 0.813rem 35.688rem 0.813rem 1.063rem;
   border-radius: 4px;
@@ -26,15 +26,31 @@
 }
 
 .authorInput {
-  width: 17.813rem;
+  width: 14.813rem;
   height: 2.813rem;
   padding: 0.813rem 0.938rem 0.563rem 1rem;
   border-radius: 4px;
   border: solid 1px #ddd;
 }
 
+.genreInput {
+  width: 14.813rem;
+  height: 4.3rem;
+  padding: 0.813rem 0.938rem 0.563rem 1rem;
+  border-radius: 4px;
+  border: solid 1px #ddd;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
 .inputs button {
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   font-size: 1.6rem;
   font-weight: 600;
 }
@@ -52,7 +68,7 @@
   border-radius: 2px;
   border: none;
   background-color: #0290ff;
-  width: 20rem;
+  width: 15rem;
   padding: 0 3rem;
 }
 
@@ -66,6 +82,17 @@
   width: 10.875rem;
   height: 1.5rem;
   margin: 1.813rem 32.75rem 1.188rem 2rem;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
+.genreInput option {
   font-family: 'Roboto Slab', serif;
   font-size: 1.25rem;
   font-weight: bold;

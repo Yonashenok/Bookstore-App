@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import classes from './NavPage.module.css';
 import PersonIcon from '../../assets/PersonIcon';
 
@@ -12,7 +12,7 @@ const NavPage = () => (
           <NavLink to="/">BOOKS</NavLink>
         </li>
         <li>
-          <NavLink to="/categories">CATEGORIES</NavLink>
+          <Link href="/">CATEGORIES</Link>
         </li>
       </ul>
     </nav>
